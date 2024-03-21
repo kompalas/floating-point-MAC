@@ -1,0 +1,43 @@
+ 
+****************************************
+Report : area
+Design : MBM_multiplier
+Version: S-2021.06-SP1
+Date   : Thu Nov 16 10:47:37 2023
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/balkon00/eda/libs/nangate45/db/nangate45.db)
+
+Number of ports:                           96
+Number of nets:                           245
+Number of cells:                          211
+Number of combinational cells:            209
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                         34
+Number of references:                      22
+
+Combinational area:                220.779999
+Buf/Inv area:                       19.684000
+Noncombinational area:               0.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                   220.779999
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  --------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
+                                  Total      Total    national  national   boxes   Design
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+MBM_multiplier                     220.7800    100.0  220.7800     0.0000  0.0000  MBM_multiplier
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+Total                                                 220.7800     0.0000  0.0000
+
+1

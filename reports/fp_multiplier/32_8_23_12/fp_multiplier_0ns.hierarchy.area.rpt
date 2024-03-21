@@ -1,0 +1,43 @@
+ 
+****************************************
+Report : area
+Design : fp_multiplier
+Version: S-2021.06-SP1
+Date   : Thu Nov 16 11:31:18 2023
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/balkon00/eda/libs/nangate45/db/nangate45.db)
+
+Number of ports:                           99
+Number of nets:                           307
+Number of cells:                          267
+Number of combinational cells:            266
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                         45
+Number of references:                      21
+
+Combinational area:                260.945999
+Buf/Inv area:                       26.600000
+Noncombinational area:               0.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                   260.945999
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  --------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
+                                  Total      Total    national  national   boxes   Design
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+fp_multiplier                      260.9460    100.0  260.9460     0.0000  0.0000  fp_multiplier
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+Total                                                 260.9460     0.0000  0.0000
+
+1

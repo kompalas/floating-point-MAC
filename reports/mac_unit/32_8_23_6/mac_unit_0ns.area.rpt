@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : mac_unit
+Version: S-2021.06-SP1
+Date   : Thu Nov 16 20:04:37 2023
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/balkon00/eda/libs/nangate45/db/nangate45.db)
+
+Number of ports:                          131
+Number of nets:                          1465
+Number of cells:                         1381
+Number of combinational cells:           1381
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                        294
+Number of references:                      35
+
+Combinational area:               1344.097997
+Buf/Inv area:                      180.082000
+Noncombinational area:               0.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                  1344.097997
+Total area:                 undefined
+1

@@ -1,0 +1,52 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : MBM_multiplier
+Version: S-2021.06-SP1
+Date   : Thu Nov 16 10:53:09 2023
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: operand_a[20]
+              (input port clocked by clk)
+  Endpoint: product[40]
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  MBM_multiplier     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  input external delay                    0.000      0.000 r
+  operand_a[20] (in)                      0.000      0.000 r
+  U57/ZN (OR2_X1)                         0.034      0.034 r
+  U58/ZN (NAND2_X1)                       0.030      0.064 f
+  U60/ZN (OR2_X1)                         0.054      0.118 f
+  U68/ZN (OAI211_X1)                      0.053      0.171 r
+  U69/Z (BUF_X1)                          0.053      0.224 r
+  U84/Z (MUX2_X1)                         0.078      0.302 f
+  product[40] (out)                       0.002      0.304 f
+  data arrival time                                  0.304
+
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  output external delay                   0.000      0.000
+  data required time                                 0.000
+  -----------------------------------------------------------
+  data required time                                 0.000
+  data arrival time                                 -0.304
+  -----------------------------------------------------------
+  slack (VIOLATED)                                  -0.304
+
+
+1

@@ -1,0 +1,86 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : mac_unit
+Version: S-2021.06-SP1
+Date   : Thu Nov 16 19:47:11 2023
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: in_b[0] (input port clocked by clk)
+  Endpoint: mac_out[15]
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mac_unit           5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  input external delay                    0.000      0.000 r
+  in_b[0] (in)                            0.000      0.000 r
+  U682/ZN (AND2_X2)                       0.051      0.051 r
+  U817/ZN (AOI21_X1)                      0.035      0.086 f
+  U1011/ZN (OAI211_X1)                    0.082      0.168 r
+  U1012/ZN (AND2_X1)                      0.057      0.226 r
+  U1013/ZN (OR2_X2)                       0.052      0.277 r
+  U861/ZN (AOI21_X1)                      0.041      0.318 f
+  U1113/ZN (XNOR2_X1)                     0.065      0.383 f
+  U674/ZN (OR3_X2)                        0.097      0.480 f
+  U732/ZN (INV_X1)                        0.049      0.529 r
+  U1122/ZN (NAND2_X1)                     0.053      0.582 f
+  U632/ZN (NAND2_X1)                      0.042      0.624 r
+  U521/ZN (AND3_X2)                       0.059      0.683 r
+  U824/ZN (AND3_X1)                       0.061      0.744 r
+  U1468/ZN (XNOR2_X1)                     0.065      0.809 r
+  U1469/ZN (OR3_X2)                       0.052      0.861 r
+  U1483/ZN (AND4_X2)                      0.068      0.928 r
+  U867/ZN (NAND4_X1)                      0.046      0.974 f
+  U1557/ZN (OAI211_X1)                    0.040      1.014 r
+  U1571/ZN (NAND4_X1)                     0.048      1.062 f
+  U855/ZN (AND2_X1)                       0.057      1.119 f
+  U699/ZN (OAI21_X1)                      0.043      1.162 r
+  U938/Z (MUX2_X1)                        0.083      1.245 f
+  U937/ZN (NAND2_X1)                      0.042      1.287 r
+  U1607/ZN (NAND2_X1)                     0.036      1.323 f
+  U1608/ZN (XNOR2_X1)                     0.056      1.379 r
+  U705/Z (BUF_X1)                         0.050      1.429 r
+  U758/ZN (AND2_X2)                       0.095      1.524 r
+  U658/Z (BUF_X2)                         0.068      1.592 r
+  U1773/ZN (NAND2_X1)                     0.037      1.629 f
+  U1915/ZN (OR2_X1)                       0.055      1.684 f
+  U1916/ZN (NAND3_X1)                     0.040      1.724 r
+  U859/ZN (NOR2_X1)                       0.031      1.755 f
+  U1925/ZN (NOR2_X1)                      0.052      1.807 r
+  U1926/ZN (NAND2_X1)                     0.035      1.843 f
+  U1931/ZN (OAI21_X1)                     0.058      1.901 r
+  U1940/ZN (AOI21_X1)                     0.043      1.943 f
+  U1989/ZN (OAI21_X1)                     0.058      2.002 r
+  U645/ZN (AND2_X2)                       0.068      2.069 r
+  U784/Z (BUF_X2)                         0.062      2.131 r
+  U2145/ZN (NAND2_X1)                     0.037      2.168 f
+  U2146/ZN (NAND2_X1)                     0.027      2.195 r
+  mac_out[15] (out)                       0.002      2.197 r
+  data arrival time                                  2.197
+
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  output external delay                   0.000      0.000
+  data required time                                 0.000
+  -----------------------------------------------------------
+  data required time                                 0.000
+  data arrival time                                 -2.197
+  -----------------------------------------------------------
+  slack (VIOLATED)                                  -2.197
+
+
+1

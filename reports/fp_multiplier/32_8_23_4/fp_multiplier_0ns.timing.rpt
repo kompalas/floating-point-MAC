@@ -1,0 +1,56 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : fp_multiplier
+Version: S-2021.06-SP1
+Date   : Thu Nov 16 11:26:08 2023
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: a_operand[11]
+              (input port clocked by clk)
+  Endpoint: result[20] (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fp_multiplier      5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  input external delay                    0.000      0.000 r
+  a_operand[11] (in)                      0.000      0.000 r
+  U272/ZN (NOR2_X1)                       0.027      0.027 f
+  U273/ZN (NOR2_X1)                       0.056      0.082 r
+  U274/ZN (NAND2_X1)                      0.035      0.118 f
+  U282/ZN (OAI21_X1)                      0.057      0.175 r
+  U220/ZN (INV_X1)                        0.030      0.205 f
+  U219/ZN (OAI211_X1)                     0.047      0.252 r
+  U169/ZN (INV_X1)                        0.034      0.286 f
+  U447/ZN (OAI21_X1)                      0.050      0.337 r
+  U449/ZN (XNOR2_X1)                      0.070      0.406 r
+  U458/ZN (NAND2_X1)                      0.034      0.441 f
+  U459/ZN (NAND2_X1)                      0.028      0.468 r
+  result[20] (out)                        0.002      0.470 r
+  data arrival time                                  0.470
+
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  output external delay                   0.000      0.000
+  data required time                                 0.000
+  -----------------------------------------------------------
+  data required time                                 0.000
+  data arrival time                                 -0.470
+  -----------------------------------------------------------
+  slack (VIOLATED)                                  -0.470
+
+
+1

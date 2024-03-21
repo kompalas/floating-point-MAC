@@ -1,0 +1,78 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : mac_unit
+Version: S-2021.06-SP1
+Date   : Thu Nov 16 20:02:07 2023
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: in_a[23] (input port clocked by clk)
+  Endpoint: mac_out[18]
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mac_unit           5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  input external delay                    0.000      0.000 f
+  in_a[23] (in)                           0.000      0.000 f
+  U614/ZN (OR2_X1)                        0.056      0.056 f
+  U701/ZN (OAI21_X1)                      0.049      0.105 r
+  U705/ZN (OAI211_X1)                     0.049      0.154 f
+  U713/ZN (NAND3_X1)                      0.038      0.192 r
+  U554/ZN (AND3_X2)                       0.057      0.249 r
+  U721/ZN (XNOR2_X1)                      0.077      0.326 r
+  U438/ZN (AND2_X2)                       0.066      0.392 r
+  U746/ZN (AOI21_X1)                      0.036      0.428 f
+  U747/ZN (OR2_X1)                        0.058      0.486 f
+  U477/ZN (AND2_X1)                       0.050      0.536 f
+  U770/ZN (NAND2_X1)                      0.039      0.575 r
+  U546/ZN (AND3_X2)                       0.064      0.639 r
+  U1169/ZN (OAI211_X1)                    0.057      0.695 f
+  U1170/ZN (OR2_X2)                       0.075      0.771 f
+  U1171/ZN (NOR2_X2)                      0.079      0.850 r
+  U1174/ZN (AND2_X2)                      0.127      0.977 r
+  U1362/ZN (NAND2_X1)                     0.056      1.033 f
+  U636/ZN (NAND4_X1)                      0.050      1.083 r
+  U687/Z (BUF_X1)                         0.046      1.129 r
+  U1374/ZN (NAND2_X1)                     0.029      1.158 f
+  U470/ZN (AND3_X1)                       0.047      1.204 f
+  U1376/ZN (OR2_X1)                       0.056      1.260 f
+  U1387/ZN (OAI211_X1)                    0.044      1.304 r
+  U1412/ZN (NAND2_X1)                     0.041      1.346 f
+  U1413/ZN (OAI21_X1)                     0.044      1.390 r
+  U1417/ZN (AOI21_X1)                     0.040      1.429 f
+  U1486/ZN (OAI21_X1)                     0.054      1.483 r
+  U1539/ZN (AOI21_X1)                     0.042      1.525 f
+  U1584/ZN (OAI21_X1)                     0.063      1.587 r
+  U1603/ZN (AND2_X1)                      0.066      1.653 r
+  U544/Z (BUF_X2)                         0.073      1.726 r
+  U1766/ZN (NAND2_X1)                     0.040      1.766 f
+  U1767/ZN (NAND2_X1)                     0.028      1.794 r
+  mac_out[18] (out)                       0.002      1.796 r
+  data arrival time                                  1.796
+
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  output external delay                   0.000      0.000
+  data required time                                 0.000
+  -----------------------------------------------------------
+  data required time                                 0.000
+  data arrival time                                 -1.796
+  -----------------------------------------------------------
+  slack (VIOLATED)                                  -1.796
+
+
+1

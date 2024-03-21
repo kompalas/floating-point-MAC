@@ -1,0 +1,48 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-max_paths 1
+	-sort_by slack
+Design : fp_multiplier
+Version: S-2021.06-SP1
+Date   : Thu Nov 16 11:39:41 2023
+****************************************
+
+
+  Startpoint: a_operand[10]
+               (input port clocked by clk)
+  Endpoint: result[4] (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  input external delay                    0.000      0.000 r
+  a_operand[10] (in)                      0.000      0.000 r
+  U133/ZN (INV_X1)                        0.025      0.025 f
+  U134/ZN (AND2_X1)                       0.044      0.070 f
+  U94/ZN (OR3_X1)                         0.088      0.157 f
+  U137/ZN (NAND2_X1)                      0.032      0.189 r
+  U150/ZN (AOI21_X1)                      0.031      0.220 f
+  U151/ZN (XNOR2_X1)                      0.064      0.284 f
+  U105/ZN (OR2_X2)                        0.086      0.370 f
+  U196/ZN (NOR4_X1)                       0.059      0.429 r
+  result[4] (out)                         0.002      0.431 r
+  data arrival time                                  0.431
+
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  clock reconvergence pessimism           0.000      0.000
+  output external delay                   0.000      0.000
+  data required time                                 0.000
+  ---------------------------------------------------------------
+  data required time                                 0.000
+  data arrival time                                 -0.431
+  ---------------------------------------------------------------
+  slack (VIOLATED)                                  -0.431
+
+
+1

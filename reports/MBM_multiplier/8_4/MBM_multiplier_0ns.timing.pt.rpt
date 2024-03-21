@@ -1,0 +1,45 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-max_paths 1
+	-sort_by slack
+Design : MBM_multiplier
+Version: S-2021.06-SP1
+Date   : Thu Nov 16 10:58:20 2023
+****************************************
+
+
+  Startpoint: operand_a[5]
+               (input port clocked by clk)
+  Endpoint: product[11]
+               (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  input external delay                    0.000      0.000 f
+  operand_a[5] (in)                       0.000      0.000 f
+  U22/ZN (OR2_X1)                         0.059      0.059 f
+  U31/ZN (AOI21_X1)                       0.046      0.105 r
+  U33/ZN (XNOR2_X1)                       0.066      0.170 r
+  U42/Z (MUX2_X1)                         0.046      0.216 r
+  product[11] (out)                       0.002      0.218 r
+  data arrival time                                  0.218
+
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  clock reconvergence pessimism           0.000      0.000
+  output external delay                   0.000      0.000
+  data required time                                 0.000
+  ---------------------------------------------------------------
+  data required time                                 0.000
+  data arrival time                                 -0.218
+  ---------------------------------------------------------------
+  slack (VIOLATED)                                  -0.218
+
+
+1

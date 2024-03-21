@@ -1,0 +1,70 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-max_paths 1
+	-sort_by slack
+Design : mac_unit
+Version: S-2021.06-SP1
+Date   : Thu Nov 16 20:24:02 2023
+****************************************
+
+
+  Startpoint: in_a[28] (input port clocked by clk)
+  Endpoint: mac_out[21]
+               (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  input external delay                    0.000      0.000 f
+  in_a[28] (in)                           0.000      0.000 f
+  U477/ZN (AND2_X1)                       0.045      0.045 f
+  U502/ZN (AOI21_X2)                      0.082      0.126 r
+  U690/ZN (OAI211_X1)                     0.058      0.185 f
+  U405/ZN (OR2_X2)                        0.076      0.260 f
+  U528/ZN (OAI22_X1)                      0.077      0.338 r
+  U439/ZN (AND3_X1)                       0.079      0.417 r
+  U650/ZN (AOI21_X1)                      0.040      0.456 f
+  U764/ZN (AND2_X1)                       0.044      0.501 f
+  U765/ZN (OAI21_X1)                      0.034      0.535 r
+  U768/ZN (AND2_X1)                       0.044      0.579 r
+  U787/ZN (OAI211_X1)                     0.038      0.616 f
+  U829/ZN (AOI21_X2)                      0.085      0.701 r
+  U512/ZN (AND2_X1)                       0.067      0.768 r
+  U978/Z (MUX2_X1)                        0.089      0.857 f
+  U980/ZN (OAI21_X1)                      0.043      0.900 r
+  U982/ZN (AND2_X1)                       0.046      0.946 r
+  U987/ZN (XNOR2_X1)                      0.069      1.015 r
+  U988/ZN (NOR2_X1)                       0.038      1.053 f
+  U989/ZN (NAND2_X2)                      0.080      1.132 r
+  U1194/ZN (OAI22_X1)                     0.063      1.195 f
+  U401/ZN (OR2_X2)                        0.064      1.259 f
+  U1196/ZN (NOR2_X1)                      0.052      1.311 r
+  U1198/ZN (OAI21_X1)                     0.043      1.354 f
+  U1201/ZN (AOI21_X1)                     0.058      1.412 r
+  U1209/ZN (OAI21_X1)                     0.042      1.454 f
+  U1265/ZN (AOI21_X1)                     0.071      1.525 r
+  U604/Z (BUF_X2)                         0.070      1.596 r
+  U1478/ZN (OAI21_X1)                     0.046      1.642 f
+  U572/ZN (XNOR2_X1)                      0.062      1.704 f
+  U1480/ZN (OAI22_X1)                     0.053      1.757 r
+  mac_out[21] (out)                       0.002      1.759 r
+  data arrival time                                  1.759
+
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  clock reconvergence pessimism           0.000      0.000
+  output external delay                   0.000      0.000
+  data required time                                 0.000
+  ---------------------------------------------------------------
+  data required time                                 0.000
+  data arrival time                                 -1.759
+  ---------------------------------------------------------------
+  slack (VIOLATED)                                  -1.759
+
+
+1

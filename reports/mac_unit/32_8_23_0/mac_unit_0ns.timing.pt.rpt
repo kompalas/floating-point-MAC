@@ -1,0 +1,82 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-max_paths 1
+	-sort_by slack
+Design : mac_unit
+Version: S-2021.06-SP1
+Date   : Thu Nov 16 19:47:15 2023
+****************************************
+
+
+  Startpoint: in_b[1] (input port clocked by clk)
+  Endpoint: mac_out[7] (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  input external delay                    0.000      0.000 f
+  in_b[1] (in)                            0.000      0.000 f
+  U799/ZN (OR2_X1)                        0.059      0.059 f
+  U817/ZN (AOI21_X1)                      0.041      0.100 r
+  U1011/ZN (OAI211_X1)                    0.060      0.160 f
+  U1074/ZN (XNOR2_X1)                     0.088      0.248 f
+  U1078/ZN (AOI211_X1)                    0.096      0.344 r
+  U697/ZN (AND3_X2)                       0.070      0.414 r
+  U640/ZN (AND2_X2)                       0.057      0.471 r
+  U801/ZN (INV_X1)                        0.038      0.509 f
+  U840/ZN (NOR2_X1)                       0.045      0.553 r
+  U908/ZN (OAI21_X1)                      0.037      0.590 f
+  U517/Z (MUX2_X2)                        0.075      0.666 f
+  U907/ZN (INV_X1)                        0.030      0.695 r
+  U1470/ZN (NAND2_X1)                     0.028      0.724 f
+  U1473/ZN (XNOR2_X1)                     0.058      0.782 r
+  U1475/ZN (NAND3_X1)                     0.046      0.827 f
+  U1489/ZN (AND2_X1)                      0.047      0.875 f
+  U1490/ZN (OAI211_X1)                    0.038      0.913 r
+  U1494/ZN (AND3_X1)                      0.054      0.967 r
+  U1557/ZN (OAI211_X1)                    0.043      1.010 f
+  U1571/ZN (NAND4_X1)                     0.038      1.048 r
+  U855/ZN (AND2_X1)                       0.064      1.112 r
+  U864/ZN (OAI21_X1)                      0.049      1.161 f
+  U670/ZN (INV_X1)                        0.067      1.229 r
+  U904/Z (MUX2_X1)                        0.096      1.325 f
+  U511/ZN (OR2_X2)                        0.068      1.392 f
+  U510/ZN (INV_X1)                        0.030      1.422 r
+  U1657/ZN (OAI21_X1)                     0.032      1.454 f
+  U536/ZN (AND3_X2)                       0.051      1.505 f
+  U638/ZN (NAND2_X1)                      0.040      1.545 r
+  U912/ZN (OR2_X2)                        0.054      1.599 r
+  U655/ZN (INV_X1)                        0.032      1.631 f
+  U653/ZN (NAND2_X1)                      0.027      1.658 r
+  U652/ZN (NAND3_X1)                      0.039      1.696 f
+  U1887/ZN (NOR2_X1)                      0.049      1.746 r
+  U1889/ZN (OAI21_X1)                     0.039      1.785 f
+  U1891/ZN (AOI21_X1)                     0.053      1.838 r
+  U1931/ZN (OAI21_X1)                     0.040      1.878 f
+  U1940/ZN (AOI21_X1)                     0.063      1.941 r
+  U1989/ZN (OAI21_X1)                     0.044      1.985 f
+  U1991/ZN (INV_X1)                       0.046      2.031 r
+  U694/ZN (AND2_X2)                       0.083      2.114 r
+  U2064/ZN (NAND2_X1)                     0.041      2.155 f
+  U2071/ZN (NAND2_X1)                     0.028      2.183 r
+  mac_out[7] (out)                        0.002      2.185 r
+  data arrival time                                  2.185
+
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  clock reconvergence pessimism           0.000      0.000
+  output external delay                   0.000      0.000
+  data required time                                 0.000
+  ---------------------------------------------------------------
+  data required time                                 0.000
+  data arrival time                                 -2.185
+  ---------------------------------------------------------------
+  slack (VIOLATED)                                  -2.185
+
+
+1

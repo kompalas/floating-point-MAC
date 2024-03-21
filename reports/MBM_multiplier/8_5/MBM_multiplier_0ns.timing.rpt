@@ -1,0 +1,49 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : MBM_multiplier
+Version: S-2021.06-SP1
+Date   : Thu Nov 16 10:58:36 2023
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: operand_a[6]
+              (input port clocked by clk)
+  Endpoint: product[11]
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  MBM_multiplier     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  input external delay                    0.000      0.000 f
+  operand_a[6] (in)                       0.000      0.000 f
+  U20/ZN (OR2_X1)                         0.057      0.057 f
+  U28/ZN (OR2_X1)                         0.051      0.108 f
+  U31/ZN (AND3_X1)                        0.036      0.143 f
+  product[11] (out)                       0.002      0.145 f
+  data arrival time                                  0.145
+
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  output external delay                   0.000      0.000
+  data required time                                 0.000
+  -----------------------------------------------------------
+  data required time                                 0.000
+  data arrival time                                 -0.145
+  -----------------------------------------------------------
+  slack (VIOLATED)                                  -0.145
+
+
+1

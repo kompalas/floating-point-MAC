@@ -1,0 +1,56 @@
+****************************************
+Report : Averaged Power
+	-verbose
+Design : fp_multiplier
+Version: S-2021.06-SP1
+Date   : Thu Nov 16 11:28:36 2023
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/balkon00/eda/libs/nangate45/db/nangate45.db)
+    dw_foundation.sldb (File: /Software/synopsys/2021/syn/S-2021.06-SP1/libraries/syn/dw_foundation.sldb)
+
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Cell               Design       Wire_model  Library       Selection_type
+--------------------------------------------------------------------------------
+                   fp_multiplier
+                                5K_hvratio_1_1
+                                            NangateOpenCellLibrary
+                                                          library default
+
+Power-specific unit information :
+    Voltage Units = 1 V
+    Capacitance Units = 1 pf
+    Time Units = 1 ns
+    Dynamic Power Units = 1 W
+    Leakage Power Units = 1 W
+
+
+
+  Attributes
+  ----------
+      i  -  Including register clock pin internal power
+      u  -  User defined power group
+
+                        Internal  Switching  Leakage    Total
+Power Group             Power     Power      Power      Power   (     %)  Attrs
+--------------------------------------------------------------------------------
+clock_network              0.0000    0.0000    0.0000    0.0000 ( 0.00%)  i
+register                   0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+combinational           4.135e-04 4.128e-04 8.989e-06 8.353e-04 (100.00%) 
+sequential                 0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+black_box                  0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+
+  Net Switching Power  = 4.128e-04   (49.42%)
+  Cell Internal Power  = 4.135e-04   (49.50%)
+  Cell Leakage Power   = 8.989e-06   ( 1.08%)
+                         ---------
+Total Power            = 8.353e-04  (100.00%)
+
+1

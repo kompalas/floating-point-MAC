@@ -1,0 +1,63 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : fp_multiplier
+Version: S-2021.06-SP1
+Date   : Thu Nov 16 11:22:48 2023
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: b_operand[4]
+              (input port clocked by clk)
+  Endpoint: result[20] (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fp_multiplier      5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  input external delay                    0.000      0.000 r
+  b_operand[4] (in)                       0.000      0.000 r
+  U288/ZN (NAND2_X1)                      0.037      0.037 f
+  U290/ZN (OAI21_X1)                      0.077      0.114 r
+  U294/ZN (AOI21_X1)                      0.041      0.155 f
+  U295/ZN (OAI21_X1)                      0.054      0.209 r
+  U386/ZN (INV_X1)                        0.043      0.251 f
+  U387/ZN (OAI21_X1)                      0.053      0.305 r
+  U389/ZN (XNOR2_X1)                      0.069      0.374 r
+  U401/ZN (AND3_X1)                       0.066      0.439 r
+  U408/ZN (AND4_X2)                       0.074      0.513 r
+  U271/Z (BUF_X1)                         0.042      0.555 r
+  U456/ZN (AND3_X1)                       0.055      0.611 r
+  U464/ZN (XNOR2_X1)                      0.039      0.650 f
+  U227/Z (MUX2_X1)                        0.073      0.722 f
+  U670/ZN (NOR2_X1)                       0.041      0.763 r
+  U267/ZN (AND4_X1)                       0.067      0.830 r
+  U672/ZN (NAND4_X1)                      0.044      0.874 f
+  U673/ZN (XNOR2_X1)                      0.059      0.934 f
+  U674/ZN (AND2_X1)                       0.034      0.968 f
+  result[20] (out)                        0.002      0.970 f
+  data arrival time                                  0.970
+
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  output external delay                   0.000      0.000
+  data required time                                 0.000
+  -----------------------------------------------------------
+  data required time                                 0.000
+  data arrival time                                 -0.970
+  -----------------------------------------------------------
+  slack (VIOLATED)                                  -0.970
+
+
+1

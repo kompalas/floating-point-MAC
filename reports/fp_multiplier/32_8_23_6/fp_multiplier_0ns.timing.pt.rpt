@@ -1,0 +1,50 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-max_paths 1
+	-sort_by slack
+Design : fp_multiplier
+Version: S-2021.06-SP1
+Date   : Thu Nov 16 11:27:33 2023
+****************************************
+
+
+  Startpoint: b_operand[7]
+               (input port clocked by clk)
+  Endpoint: result[19] (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  input external delay                    0.000      0.000 r
+  b_operand[7] (in)                       0.000      0.000 r
+  U204/ZN (AND2_X2)                       0.052      0.052 r
+  U201/ZN (AOI21_X1)                      0.031      0.082 f
+  U173/ZN (OR3_X1)                        0.076      0.159 f
+  U294/ZN (AOI21_X1)                      0.057      0.216 r
+  U208/ZN (NOR2_X1)                       0.036      0.252 f
+  U207/Z (BUF_X1)                         0.047      0.299 f
+  U315/ZN (OAI211_X1)                     0.052      0.352 r
+  U316/ZN (XNOR2_X1)                      0.066      0.417 r
+  U317/ZN (OR2_X1)                        0.040      0.457 r
+  U318/ZN (OAI21_X1)                      0.029      0.487 f
+  result[19] (out)                        0.002      0.489 f
+  data arrival time                                  0.489
+
+  clock clk (rise edge)                   0.000      0.000
+  clock network delay (ideal)             0.000      0.000
+  clock reconvergence pessimism           0.000      0.000
+  output external delay                   0.000      0.000
+  data required time                                 0.000
+  ---------------------------------------------------------------
+  data required time                                 0.000
+  data arrival time                                 -0.489
+  ---------------------------------------------------------------
+  slack (VIOLATED)                                  -0.489
+
+
+1
