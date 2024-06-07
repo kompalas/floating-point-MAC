@@ -1,0 +1,49 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-max_paths 1
+	-sort_by slack
+Design : mitchell_multiplier
+Version: T-2022.03-SP5
+Date   : Wed Jun  5 15:18:48 2024
+****************************************
+
+
+  Startpoint: operand_a[23]
+               (input port clocked by clk)
+  Endpoint: product[39]
+               (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.00       0.00 f
+  operand_a[23] (in)                       0.00       0.00 f
+  U331/ZN (OR2_X1)                         0.06       0.06 f
+  U370/ZN (NOR2_X1)                        0.05       0.11 r
+  U467/ZN (XNOR2_X1)                       0.07       0.18 r
+  U396/Z (MUX2_X1)                         0.09       0.28 f
+  U516/ZN (OAI211_X1)                      0.05       0.33 r
+  U398/ZN (NAND4_X1)                       0.05       0.38 f
+  U521/ZN (NAND2_X1)                       0.03       0.41 r
+  U523/ZN (AND2_X1)                        0.03       0.44 r
+  product[39] (out)                        0.00       0.44 r
+  data arrival time                                   0.44
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock reconvergence pessimism            0.00       0.00
+  output external delay                    0.00       0.00
+  data required time                                  0.00
+  ---------------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                  -0.44
+  ---------------------------------------------------------------
+  slack (VIOLATED)                                   -0.44
+
+
+1

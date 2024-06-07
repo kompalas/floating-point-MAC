@@ -1,0 +1,32 @@
+****************************************
+Report : Averaged Power
+Design : mitchell_multiplier
+Version: T-2022.03-SP5
+Date   : Wed Jun  5 15:04:49 2024
+****************************************
+
+
+
+  Attributes
+  ----------
+      i  -  Including register clock pin internal power
+      u  -  User defined power group
+
+                        Internal  Switching  Leakage    Total
+Power Group             Power     Power      Power      Power   (     %)  Attrs
+--------------------------------------------------------------------------------
+clock_network              0.0000    0.0000    0.0000    0.0000 ( 0.00%)  i
+register                   0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+combinational           7.671e-04 8.695e-04 2.519e-05 1.662e-03 (100.00%) 
+sequential                 0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+black_box                  0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+
+  Net Switching Power  = 8.695e-04   (52.32%)
+  Cell Internal Power  = 7.671e-04   (46.16%)
+  Cell Leakage Power   = 2.519e-05   ( 1.52%)
+                         ---------
+Total Power            = 1.662e-03  (100.00%)
+
+1

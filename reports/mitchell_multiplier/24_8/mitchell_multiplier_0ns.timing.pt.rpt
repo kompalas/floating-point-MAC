@@ -1,0 +1,63 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-max_paths 1
+	-sort_by slack
+Design : mitchell_multiplier
+Version: T-2022.03-SP5
+Date   : Wed Jun  5 15:07:49 2024
+****************************************
+
+
+  Startpoint: operand_a[17]
+               (input port clocked by clk)
+  Endpoint: product[41]
+               (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.00       0.00 f
+  operand_a[17] (in)                       0.00       0.00 f
+  U849/ZN (INV_X1)                         0.03       0.03 r
+  U850/ZN (OR2_X1)                         0.03       0.06 r
+  U851/ZN (OAI21_X1)                       0.03       0.09 f
+  U452/ZN (OR2_X1)                         0.06       0.15 f
+  U414/ZN (OR2_X2)                         0.05       0.21 f
+  U587/ZN (OR2_X1)                         0.05       0.26 f
+  U704/ZN (AND2_X2)                        0.05       0.31 f
+  U923/ZN (AND2_X1)                        0.05       0.36 f
+  U423/ZN (NOR2_X1)                        0.06       0.42 r
+  U1109/ZN (OAI21_X1)                      0.04       0.46 f
+  U1110/ZN (OAI211_X1)                     0.05       0.51 r
+  U787/ZN (INV_X1)                         0.03       0.54 f
+  U569/ZN (OR2_X1)                         0.06       0.60 f
+  U742/ZN (OAI211_X1)                      0.04       0.64 r
+  U497/ZN (NAND3_X1)                       0.05       0.69 f
+  U1134/ZN (NAND2_X1)                      0.04       0.74 r
+  U1139/ZN (NAND4_X1)                      0.05       0.79 f
+  U732/ZN (XNOR2_X1)                       0.07       0.86 f
+  U729/ZN (OR2_X1)                         0.07       0.93 f
+  U718/ZN (OAI211_X1)                      0.04       0.97 r
+  U745/ZN (OAI21_X1)                       0.04       1.01 f
+  U1246/ZN (OAI21_X1)                      0.03       1.04 r
+  product[41] (out)                        0.00       1.05 r
+  data arrival time                                   1.05
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock reconvergence pessimism            0.00       0.00
+  output external delay                    0.00       0.00
+  data required time                                  0.00
+  ---------------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                  -1.05
+  ---------------------------------------------------------------
+  slack (VIOLATED)                                   -1.05
+
+
+1

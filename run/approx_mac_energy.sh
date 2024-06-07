@@ -5,28 +5,34 @@ set -x
 top_design="mac_unit"
 synclk="0"
 num_inputs="100000"
-use_synth_mbm="true"  # change to anything else to disable this feature
+tunit="ns"
+# controls whether a netlist will be used as the mantissa multiplier, by setting to 'true'
+use_netlist="false"
+netlist_suffix=".sv"
 
+# maindir="$HOME/eda/testproj"
+maindir="$HOME/eda_scripts_vcs"
 
-maindir="$HOME/eda/testproj"
-area_rpt="$maindir/reports/${top_design}_${synclk}ns.area.rpt"
-delay_rpt="$maindir/reports/${top_design}_${synclk}ns.timing.pt.rpt"
-power_rpt="$maindir/reports/${top_design}_${synclk}ns.power.ptpx.rpt"
+resfile="$maindir/results/${top_design}_trunc_eval.mbm.nangate45.csv"
 
 reports_dir="$maindir/allreports/${top_design}"
+area_rpt="$maindir/reports/${top_design}_${synclk}${tunit}.area.rpt"
+delay_rpt="$maindir/reports/${top_design}_${synclk}${tunit}.timing.pt.rpt"
+power_rpt="$maindir/reports/${top_design}_${synclk}${tunit}.power.ptpx.rpt"
+
 mkdir -p $reports_dir
 mkdir -p $maindir/results
-resfile="$maindir/results/${top_design}_trunc_eval.csv"
 if ! [ -f $resfile ]; then
     echo "BitWidth,ExpWidth,MantWidth,TruncBits,SynClk,SimClk,Area,Delay,Power" > $resfile
 fi
 
 sed -i "/ENV_CLK_PERIOD=/ c\export ENV_CLK_PERIOD=\"$synclk\"" $maindir/scripts/env.sh
 sed -i "/ENV_TOP_DESIGN=/ c\export ENV_TOP_DESIGN=\"$top_design\"" $maindir/scripts/env.sh
+sed -i "/ENV_TB_NAME=/ c\export ENV_TB_NAME=\"${top_design}_tb\"" $maindir/scripts/env.sh
 sed -i "/parameter NUM_INPUTS=/ c\parameter NUM_INPUTS=$num_inputs;" $maindir/sim/${top_design}_tb.v
 
 subtract="0"
-if [ "$use_synth_mbm" == "true" ]; then
+if [ "$use_netlist" == "true" ]; then
     awk '
         BEGIN{comment=0} 
             /mbm/ {comment=0} 
@@ -43,15 +49,19 @@ for((i=0; i<2; i++)); do
         bit_width="32"
         exp_width="8"
         mant_width="23"
-        simclk="2.7"
+        simclk="3.4"
         # sed -i '/`define/ c\`define FP32\' $maindir/sim/${top_design}_tb.v
     else
         bit_width="16"
         exp_width="8"
         mant_width="7"
-        simclk="1.9"
+        simclk="2.3"
         # sed -i '/`define/ c\`define BFLOAT16\' $maindir/sim/${top_design}_tb.v
     fi
+    
+    # apply relaxed clock
+    simclk="5"
+
     sed -i "/parameter BIT_WIDTH=/ c\parameter BIT_WIDTH=$bit_width;" $maindir/sim/${top_design}_tb.v
     sed -i "/parameter EXPONENT_WIDTH=/ c\parameter EXPONENT_WIDTH=$exp_width;" $maindir/sim/${top_design}_tb.v
     sed -i "/parameter MANTISSA_WIDTH=/ c\parameter MANTISSA_WIDTH=$mant_width;" $maindir/sim/${top_design}_tb.v
@@ -69,11 +79,11 @@ for((i=0; i<2; i++)); do
     trunc_limit=$((mant_width-subtract))
     for((trunc_bits=0; trunc_bits<=$trunc_limit; trunc_bits++)); do
 
-        sed -i "/parameter TRUNC_MANTISSA_MBM_BITS/ c\parameter TRUNC_MANTISSA_MBM_BITS = $trunc_bits" $maindir/hdl/${top_design}.v
+        sed -i "/parameter TRUNC_MANTISSA_BITS/ c\parameter TRUNC_MANTISSA_BITS = $trunc_bits" $maindir/hdl/${top_design}.v
         rm -rf $maindir/work_gate
 
-        if [ "$use_synth_mbm" == "true" ]; then
-            cp $maindir/allnetlists/MBM_multiplier/$((mant_width+1))_${trunc_bits}.sv $maindir/hdl/MBM_multiplier_trunc.v
+        if [ "$use_netlist" == "true" ]; then
+            cp $maindir/allnetlists/MBM_multiplier/$((mant_width+1))_${trunc_bits}${netlist_suffix} $maindir/hdl/MBM_multiplier_trunc.v
             sed -i "s/module MBM_multiplier/module MBM_multiplier_$((mant_width+1))_${trunc_bits}/" $maindir/hdl/MBM_multiplier_trunc.v
             sed -i "s/MBM_multiplier[_0-9]*/MBM_multiplier_$((mant_width+1))_${trunc_bits}/" $maindir/hdl/fp_multiplier.v
         fi

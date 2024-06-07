@@ -1,0 +1,54 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : mitchell_multiplier
+Version: T-2022.03-SP5
+Date   : Wed Jun  5 15:19:26 2024
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: operand_a[21]
+              (input port clocked by clk)
+  Endpoint: product[43]
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mitchell_multiplier
+                     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.00       0.00 f
+  operand_a[21] (in)                       0.00       0.00 f
+  U292/ZN (OR2_X2)                         0.06       0.06 f
+  U317/ZN (OAI21_X1)                       0.06       0.12 r
+  U400/ZN (XNOR2_X1)                       0.08       0.20 r
+  U312/ZN (XNOR2_X1)                       0.08       0.28 r
+  U449/ZN (NAND2_X1)                       0.05       0.33 f
+  U457/ZN (OR3_X1)                         0.08       0.41 f
+  U461/ZN (OAI211_X1)                      0.03       0.45 r
+  product[43] (out)                        0.00       0.45 r
+  data arrival time                                   0.45
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  output external delay                    0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                  -0.45
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.45
+
+
+1

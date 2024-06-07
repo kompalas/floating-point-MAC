@@ -1,0 +1,73 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : mitchell_multiplier
+Version: T-2022.03-SP5
+Date   : Wed Jun  5 14:51:11 2024
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: operand_b[20]
+              (input port clocked by clk)
+  Endpoint: product[30]
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mitchell_multiplier
+                     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.00       0.00 f
+  operand_b[20] (in)                       0.00       0.00 f
+  U714/ZN (OR2_X2)                         0.07       0.07 f
+  U715/ZN (NOR2_X2)                        0.06       0.13 r
+  U916/ZN (NAND4_X1)                       0.05       0.18 f
+  U1073/ZN (AND2_X1)                       0.05       0.23 f
+  U739/ZN (AND4_X2)                        0.05       0.28 f
+  U576/ZN (AND2_X4)                        0.07       0.35 f
+  U1429/ZN (NAND2_X1)                      0.05       0.40 r
+  U1430/ZN (OAI21_X1)                      0.03       0.43 f
+  U1431/ZN (INV_X1)                        0.03       0.47 r
+  U1432/ZN (NAND3_X1)                      0.04       0.51 f
+  U1562/ZN (OAI21_X1)                      0.05       0.56 r
+  U1566/ZN (OAI21_X1)                      0.04       0.60 f
+  U743/ZN (NOR2_X2)                        0.07       0.67 r
+  U1571/ZN (OAI21_X1)                      0.04       0.71 f
+  U1572/ZN (AOI21_X1)                      0.06       0.77 r
+  U1573/ZN (OAI21_X1)                      0.04       0.81 f
+  U783/ZN (AOI21_X1)                       0.09       0.90 r
+  U1595/ZN (OAI21_X1)                      0.04       0.95 f
+  U1618/ZN (XNOR2_X1)                      0.06       1.01 f
+  U1710/ZN (INV_X1)                        0.03       1.04 r
+  U1711/ZN (AND2_X1)                       0.05       1.09 r
+  U952/ZN (NOR2_X1)                        0.03       1.12 f
+  U884/ZN (AND2_X1)                        0.04       1.16 f
+  U600/ZN (OR2_X1)                         0.07       1.23 f
+  U738/ZN (NAND3_X1)                       0.03       1.26 r
+  U927/ZN (OAI21_X1)                       0.03       1.29 f
+  product[30] (out)                        0.00       1.30 f
+  data arrival time                                   1.30
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  output external delay                    0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                  -1.30
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -1.30
+
+
+1

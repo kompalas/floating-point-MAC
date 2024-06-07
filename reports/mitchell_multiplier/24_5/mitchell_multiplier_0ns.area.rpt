@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : mitchell_multiplier
+Version: T-2022.03-SP5
+Date   : Wed Jun  5 15:01:05 2024
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/balaskas/libs/nangate45/db/nangate45.db)
+
+Number of ports:                           96
+Number of nets:                          1138
+Number of cells:                         1100
+Number of combinational cells:           1096
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                        181
+Number of references:                      40
+
+Combinational area:               1067.724000
+Buf/Inv area:                      104.538000
+Noncombinational area:               0.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                  1067.724000
+Total area:                 undefined
+1

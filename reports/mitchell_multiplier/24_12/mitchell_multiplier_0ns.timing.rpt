@@ -1,0 +1,61 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : mitchell_multiplier
+Version: T-2022.03-SP5
+Date   : Wed Jun  5 15:14:30 2024
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: operand_a[13]
+              (input port clocked by clk)
+  Endpoint: product[39]
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mitchell_multiplier
+                     5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.00       0.00 f
+  operand_a[13] (in)                       0.00       0.00 f
+  U546/ZN (INV_X1)                         0.03       0.03 r
+  U547/ZN (NOR2_X1)                        0.02       0.05 f
+  U548/ZN (AND2_X1)                        0.04       0.08 f
+  U550/ZN (OAI211_X1)                      0.05       0.14 r
+  U551/ZN (OAI211_X2)                      0.08       0.22 f
+  U486/Z (BUF_X1)                          0.06       0.28 f
+  U442/Z (MUX2_X1)                         0.07       0.35 f
+  U664/ZN (AOI22_X1)                       0.06       0.41 r
+  U667/ZN (NAND4_X1)                       0.06       0.47 f
+  U668/ZN (NAND2_X1)                       0.05       0.52 r
+  U669/ZN (AND2_X1)                        0.05       0.57 r
+  U412/ZN (AND4_X1)                        0.06       0.63 r
+  U781/ZN (OAI21_X1)                       0.03       0.66 f
+  U782/ZN (AND2_X1)                        0.03       0.70 f
+  product[39] (out)                        0.00       0.70 f
+  data arrival time                                   0.70
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  output external delay                    0.00       0.00
+  data required time                                  0.00
+  -----------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                  -0.70
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.70
+
+
+1

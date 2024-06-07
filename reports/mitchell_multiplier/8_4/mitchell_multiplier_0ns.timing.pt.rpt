@@ -1,0 +1,48 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-max_paths 1
+	-sort_by slack
+Design : mitchell_multiplier
+Version: T-2022.03-SP5
+Date   : Wed Jun  5 16:02:19 2024
+****************************************
+
+
+  Startpoint: operand_b[5]
+               (input port clocked by clk)
+  Endpoint: product[11]
+               (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.00       0.00 r
+  operand_b[5] (in)                        0.00       0.00 r
+  U118/ZN (INV_X1)                         0.02       0.02 f
+  U99/ZN (OR2_X2)                          0.05       0.08 f
+  U119/ZN (NAND2_X1)                       0.03       0.11 r
+  U120/Z (MUX2_X1)                         0.09       0.19 f
+  U112/ZN (AND2_X1)                        0.05       0.24 f
+  U172/ZN (OR3_X1)                         0.07       0.31 f
+  U173/ZN (NAND3_X1)                       0.03       0.34 r
+  product[11] (out)                        0.00       0.35 r
+  data arrival time                                   0.35
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock reconvergence pessimism            0.00       0.00
+  output external delay                    0.00       0.00
+  data required time                                  0.00
+  ---------------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                  -0.35
+  ---------------------------------------------------------------
+  slack (VIOLATED)                                   -0.35
+
+
+1

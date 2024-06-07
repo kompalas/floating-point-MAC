@@ -5,15 +5,18 @@ top_design="fp_multiplier"
 synclk="0"
 num_inputs="100000"
 
-maindir="$HOME/eda/testproj"
+# maindir="$HOME/eda/testproj"
+maindir="$HOME/eda_scripts_vcs"
+
+reports_dir="$maindir/allreports/${top_design}"
 area_rpt="$maindir/reports/${top_design}_${synclk}ns.area.rpt"
 delay_rpt="$maindir/reports/${top_design}_${synclk}ns.timing.pt.rpt"
 power_rpt="$maindir/reports/${top_design}_${synclk}ns.power.ptpx.rpt"
 
-reports_dir="$maindir/allreports/${top_design}"
+resfile="$maindir/results/${top_design}_trunc_eval.csv"
+
 mkdir -p $reports_dir
 mkdir -p $maindir/results
-resfile="$maindir/results/${top_design}_trunc_eval.csv"
 if ! [ -f $resfile ]; then
     echo "BitWidth,ExpWidth,MantWidth,TruncBits,SynClk,SimClk,Area,Delay,Power" > $resfile
 fi
@@ -29,12 +32,12 @@ for((i=0; i<2; i++)); do
         bit_width="32"
         exp_width="8"
         mant_width="23"
-        simclk="1"
+        simclk="2"
     else
         bit_width="16"
         exp_width="8"
         mant_width="7"
-        simclk="0.7"
+        simclk="1.5"
     fi
     sed -i "/parameter BIT_WIDTH=/ c\parameter BIT_WIDTH=$bit_width;" $maindir/sim/${top_design}_tb.v
     sed -i "/parameter EXPONENT_WIDTH=/ c\parameter EXPONENT_WIDTH=$exp_width;" $maindir/sim/${top_design}_tb.v
@@ -52,8 +55,8 @@ for((i=0; i<2; i++)); do
 
     for((trunc_bits=0; trunc_bits<=$mant_width; trunc_bits++)); do
 
-        sed -i "/parameter TRUNC_MANTISSA_MBM_BITS/ c\parameter TRUNC_MANTISSA_MBM_BITS = $trunc_bits," $maindir/hdl/${top_design}.v
-        rm -rf $maindir/work_gate
+        sed -i "/parameter TRUNC_MANTISSA_BITS/ c\parameter TRUNC_MANTISSA_BITS = $trunc_bits," $maindir/hdl/${top_design}.v
+        # rm -rf $maindir/work_gate
 
         make all
         area="$(awk '/Total cell area/ {print $NF}' $area_rpt)"

@@ -1,0 +1,67 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-max_paths 1
+	-sort_by slack
+Design : mitchell_multiplier
+Version: T-2022.03-SP5
+Date   : Wed Jun  5 14:51:15 2024
+****************************************
+
+
+  Startpoint: operand_b[20]
+               (input port clocked by clk)
+  Endpoint: product[44]
+               (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.00       0.00 f
+  operand_b[20] (in)                       0.00       0.00 f
+  U714/ZN (OR2_X2)                         0.07       0.07 f
+  U715/ZN (NOR2_X2)                        0.06       0.13 r
+  U916/ZN (NAND4_X1)                       0.05       0.18 f
+  U1073/ZN (AND2_X1)                       0.05       0.22 f
+  U740/ZN (AND4_X1)                        0.05       0.27 f
+  U774/ZN (OR2_X2)                         0.06       0.33 f
+  U788/Z (BUF_X2)                          0.06       0.39 f
+  U1381/ZN (NOR2_X1)                       0.05       0.44 r
+  U1382/ZN (AOI21_X1)                      0.03       0.47 f
+  U998/ZN (AND3_X1)                        0.04       0.51 f
+  U566/Z (MUX2_X2)                         0.07       0.58 f
+  U1386/ZN (OAI21_X1)                      0.06       0.64 r
+  U1409/ZN (NAND2_X1)                      0.04       0.68 f
+  U1411/ZN (OAI21_X1)                      0.06       0.74 r
+  U1455/ZN (AOI21_X1)                      0.04       0.78 f
+  U1573/ZN (OAI21_X1)                      0.06       0.84 r
+  U783/ZN (AOI21_X1)                       0.04       0.88 f
+  U1595/ZN (OAI21_X1)                      0.05       0.94 r
+  U1618/ZN (XNOR2_X1)                      0.07       1.01 r
+  U1710/ZN (INV_X1)                        0.03       1.03 f
+  U1839/Z (BUF_X1)                         0.04       1.07 f
+  U1840/ZN (NAND2_X1)                      0.03       1.10 r
+  U592/ZN (AND4_X2)                        0.07       1.18 r
+  U1861/ZN (OR2_X1)                        0.04       1.22 r
+  U684/ZN (NAND4_X1)                       0.04       1.26 f
+  U683/ZN (NAND2_X1)                       0.03       1.29 r
+  product[44] (out)                        0.00       1.29 r
+  data arrival time                                   1.29
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock reconvergence pessimism            0.00       0.00
+  output external delay                    0.00       0.00
+  data required time                                  0.00
+  ---------------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                  -1.29
+  ---------------------------------------------------------------
+  slack (VIOLATED)                                   -1.29
+
+
+1

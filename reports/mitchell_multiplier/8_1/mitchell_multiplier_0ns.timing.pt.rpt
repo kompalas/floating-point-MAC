@@ -1,0 +1,53 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-max_paths 1
+	-sort_by slack
+Design : mitchell_multiplier
+Version: T-2022.03-SP5
+Date   : Wed Jun  5 16:00:18 2024
+****************************************
+
+
+  Startpoint: operand_a[2]
+               (input port clocked by clk)
+  Endpoint: product[15]
+               (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.00       0.00 f
+  operand_a[2] (in)                        0.00       0.00 f
+  U295/ZN (INV_X1)                         0.03       0.03 r
+  U296/ZN (AOI21_X1)                       0.03       0.06 f
+  U144/ZN (OR2_X1)                         0.06       0.12 f
+  U268/ZN (AND2_X1)                        0.04       0.17 f
+  U150/ZN (NAND3_X1)                       0.03       0.20 r
+  U149/ZN (NAND3_X1)                       0.05       0.25 f
+  U159/ZN (AND2_X1)                        0.05       0.29 f
+  U377/ZN (AND2_X1)                        0.04       0.33 f
+  U380/ZN (NOR4_X1)                        0.08       0.41 r
+  U430/ZN (NOR2_X1)                        0.03       0.44 f
+  U431/ZN (AND3_X1)                        0.04       0.49 f
+  U438/ZN (AOI211_X1)                      0.06       0.55 r
+  product[15] (out)                        0.00       0.55 r
+  data arrival time                                   0.55
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock reconvergence pessimism            0.00       0.00
+  output external delay                    0.00       0.00
+  data required time                                  0.00
+  ---------------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                  -0.55
+  ---------------------------------------------------------------
+  slack (VIOLATED)                                   -0.55
+
+
+1

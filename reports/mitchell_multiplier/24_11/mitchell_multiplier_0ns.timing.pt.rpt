@@ -1,0 +1,61 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-max_paths 1
+	-sort_by slack
+Design : mitchell_multiplier
+Version: T-2022.03-SP5
+Date   : Wed Jun  5 15:13:09 2024
+****************************************
+
+
+  Startpoint: operand_a[22]
+               (input port clocked by clk)
+  Endpoint: product[46]
+               (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.00       0.00 r
+  operand_a[22] (in)                       0.00       0.00 r
+  U627/ZN (INV_X1)                         0.03       0.03 f
+  U664/ZN (AOI21_X1)                       0.07       0.10 r
+  U515/ZN (OAI21_X2)                       0.06       0.17 f
+  U388/ZN (OR2_X2)                         0.07       0.24 f
+  U715/ZN (INV_X1)                         0.06       0.31 r
+  U500/ZN (AND2_X1)                        0.06       0.36 r
+  U716/ZN (INV_X1)                         0.03       0.39 f
+  U785/ZN (OAI22_X1)                       0.04       0.43 r
+  U789/ZN (OAI21_X1)                       0.03       0.47 f
+  U544/ZN (NAND3_X1)                       0.04       0.50 r
+  U543/ZN (NAND2_X1)                       0.04       0.54 f
+  U826/ZN (NAND2_X1)                       0.04       0.59 r
+  U828/ZN (OAI211_X1)                      0.05       0.63 f
+  U961/ZN (AOI21_X1)                       0.06       0.69 r
+  U962/ZN (XNOR2_X1)                       0.07       0.77 r
+  U578/ZN (NAND2_X1)                       0.04       0.81 f
+  U503/ZN (AND2_X1)                        0.04       0.85 f
+  U536/ZN (AND2_X1)                        0.04       0.89 f
+  U539/ZN (OAI211_X1)                      0.04       0.93 r
+  U558/ZN (NAND2_X1)                       0.02       0.96 f
+  product[46] (out)                        0.00       0.96 f
+  data arrival time                                   0.96
+
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock reconvergence pessimism            0.00       0.00
+  output external delay                    0.00       0.00
+  data required time                                  0.00
+  ---------------------------------------------------------------
+  data required time                                  0.00
+  data arrival time                                  -0.96
+  ---------------------------------------------------------------
+  slack (VIOLATED)                                   -0.96
+
+
+1

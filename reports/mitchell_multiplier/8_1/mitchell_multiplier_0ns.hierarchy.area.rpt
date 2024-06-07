@@ -1,0 +1,43 @@
+ 
+****************************************
+Report : area
+Design : mitchell_multiplier
+Version: T-2022.03-SP5
+Date   : Wed Jun  5 16:00:14 2024
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /home/balaskas/libs/nangate45/db/nangate45.db)
+
+Number of ports:                           32
+Number of nets:                           333
+Number of cells:                          319
+Number of combinational cells:            319
+Number of sequential cells:                 0
+Number of macros/black boxes:               0
+Number of buf/inv:                         56
+Number of references:                      27
+
+Combinational area:                314.944001
+Buf/Inv area:                       34.048000
+Noncombinational area:               0.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                   314.944001
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  --------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
+                                  Total      Total    national  national   boxes   Design
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+mitchell_multiplier                314.9440    100.0  314.9440     0.0000  0.0000  mitchell_multiplier
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+Total                                                 314.9440     0.0000  0.0000
+
+1
